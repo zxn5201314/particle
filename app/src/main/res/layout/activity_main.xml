@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerlayout_id"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <!--垂直方向的线性布局,实现可折叠标题栏-->
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+                <!--顶部导航栏-->
+            <!--app:layout_scrollFlags="scroll|enterAlways|snap"-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_id"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:background="?attr/colorPrimary"
+        app:titleTextAppearance="@style/toolbar_title_size"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+        <!--芒果校园-->
+        <TextView
+            android:layout_gravity="center"
+            android:text="首页"
+            android:textSize="20sp"
+            android:id="@+id/main_tv_id"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+        <!--添加ViewPage滚动的部分-->
+        <!--智能刷新组件-->
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:layout_width="match_parent"
+            android:id="@+id/smart_refresh_id"
+            android:layout_marginBottom="50dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:srlPrimaryColor="@color/colorPrimary"
+            android:layout_height="match_parent">
+        <!--滚动视图-->
+        <android.support.v7.widget.RecyclerView
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:id="@+id/recyclerviewId"
+            android:scrollbars="vertical"
+            android:scrollbarStyle="outsideOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
